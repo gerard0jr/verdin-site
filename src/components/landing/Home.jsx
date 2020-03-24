@@ -13,7 +13,7 @@ export const Home = () => {
         document.getElementById("mobile-menu").style.display = "none"
         document.getElementById("mobile-menu").style.opacity = 0
         let currentScrollPos = window.pageYOffset
-        if (prevScrollpos > currentScrollPos) {
+        if (prevScrollpos >= currentScrollPos) {
             if(currentScrollPos >= 600){
                 document.getElementById("navbar").style.backgroundColor = "white"
                 // document.getElementById("navbar").style.padding = "0 3rem"

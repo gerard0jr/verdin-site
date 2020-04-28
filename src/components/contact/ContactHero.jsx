@@ -8,7 +8,7 @@ export const ContactHero = () => {
                 <p>
                     Our Headquarter
                     <br/><br/>
-                    1306 west 37th street, New York, ny 10036
+                    306 west 37 st New York, NY 10018
                     <br/><br/>
                     Phone
                     <br/>

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { dresses } from '../db'
 import { Link } from 'react-router-dom'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 export const Looks = (props) => {
 
@@ -27,12 +29,22 @@ export const Looks = (props) => {
             </div>
             <div className='look-detail'>
                 <div className='look-description'>
-                    <h2>{props.match.params.look.toUpperCase()}</h2>
+                    <h2 style={{fontWeight: 'bolder'}}>{props.match.params.collection.toUpperCase()}</h2>
+                    <h3 style={{fontWeight: 'lighter'}}>{props.match.params.look.toUpperCase()}</h3>
                 </div>
                 <div className='look-photos'>
-                    {dresses.filter(dress => dress.indexOf(props.match.params.collection) !== -1 && dress.indexOf(`${props.match.params.look}/`) !== -1).map(dress => 
-                        <img key={dress} src={`${dress}`} alt="dress"/>
-                    )}
+                    <Carousel
+                        showStatus={false}
+                        showThumbs={false}
+                        autoPlay
+                        width='350px'
+                        emulateTouch
+                        infiniteLoop
+                    >
+                        {dresses.filter(dress => dress.indexOf(props.match.params.collection) !== -1 && dress.indexOf(`${props.match.params.look}/`) !== -1).map(dress => 
+                            <img key={dress} src={`${dress}`} alt="dress"/>
+                        )}
+                    </Carousel>
                 </div>
             </div>
         </div>

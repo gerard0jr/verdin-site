@@ -24,7 +24,7 @@ export const CollectionDresses = (props) => {
             }
             document.getElementById("navbar").style.top = "0"
         } else {
-            document.getElementById("navbar").style.top = "-120px"
+            document.getElementById("navbar").style.top = "-185px"
         }
         prevScrollpos = currentScrollPos
     }
